@@ -1,28 +1,28 @@
 package com.groupName.artifactName.code;
 
 public class OrderRequest {
-    String familyName;
-    Integer orderID;
+    String family;
+    Integer orderId;
 
     public String getFamilyName() {
-        return familyName;
+        return family;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public void setFamilyName(String family) {
+        this.family = family;
     }
 
     public Integer getOrderID() {
-        return orderID;
+        return orderId;
     }
 
-    public void setOrderID(Integer orderID) {
-        this.orderID = orderID;
+    public void setOrderID(Integer orderId) {
+        this.orderId = orderId;
     }
 
-    public OrderRequest(String familyName, Integer orderID) {
-        this.familyName = familyName;
-        this.orderID = orderID;
+    public OrderRequest(String family, Integer orderId) {
+        this.family = family;
+        this.orderId = orderId;
     }
 
 }
