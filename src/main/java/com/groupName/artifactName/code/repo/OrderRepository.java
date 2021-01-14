@@ -16,6 +16,10 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
 
     //select don from family where name = 'Corleone';
     @Query(value = "SELECT don FROM family f WHERE f.name = :name", nativeQuery = true)
-    Integer findDonOffFamily(@Param("name") String familyName);
+    Integer findDonByFamily(@Param("name") String familyName);
+
+    @Query(value = "SELECT name FROM family f WHERE f.don = :don", nativeQuery = true)
+    String findFamilyByDon(@Param("don") Integer donId);
+
 
 }

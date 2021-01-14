@@ -49,8 +49,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean giveOrder(String family, Integer orderID) {
-       Integer don_id =  orderRepository.findDonOffFamily(family);
+       Integer don_id =  orderRepository.findDonByFamily(family);
         return  orderRepository.giveOrder(don_id, orderID, false );
 
+    }
+
+    @Override
+    public String findFamilyByDon(Integer don) {
+        return orderRepository.findFamilyByDon(don);
     }
 }

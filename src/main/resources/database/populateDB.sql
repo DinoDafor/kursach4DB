@@ -1,3 +1,14 @@
+delete from don;
+delete from consiglieri;
+delete from city;
+delete from family;
+delete from sphere_of_influence;
+delete from families_influences;
+delete from soldier;
+delete from lawyer;
+delete from families_relationship;
+delete from "order";
+
 insert into don (name) values ('Vito Corleone');
 insert into consiglieri (name) values ('Tom Haggen');
 insert into city (name) values ('New York');
@@ -18,3 +29,4 @@ insert into families_influences (family, sphere_of_influence) values ('Tattalgia
 insert into soldier (name, family) values ('Bruno Tattalgia', 'Tattalgia');
 insert into families_relationship (first_family, second_family) values ('Corleone', 'Tattalgia');
 insert into "order" (don, cost, income, soldiers_number, lawyers_number, sphere_of_influence) values (1, 1,2,1,1,1);
+insert into soldier(name) VALUES ('Lucky Stranger');

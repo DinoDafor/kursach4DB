@@ -50,4 +50,6 @@ public interface OrderService {
     boolean delete(int id);
 
     boolean giveOrder(String family, Integer orderID);
+
+    String findFamilyByDon(Integer don);
 }

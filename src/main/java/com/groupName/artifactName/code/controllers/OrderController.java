@@ -39,7 +39,11 @@ public class OrderController {
     @GetMapping
     public ResponseEntity<List<Order>> read() {
         final List<Order> orders = orderService.readAll();
+        for (Order order:
+             orders) {
+            order.setFamily(orderService.findFamilyByDon(order.getDon()));
 
+        }
         return orders != null &&  !orders.isEmpty()
                 ? new ResponseEntity<>(orders, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);

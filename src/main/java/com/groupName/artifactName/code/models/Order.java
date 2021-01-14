@@ -11,7 +11,7 @@ public class Order {
     Integer id;
 
     @Column(name = "don")
-    String don;
+    Integer don;
 
     @Column(name = "cost")
     Integer cost;
@@ -31,9 +31,16 @@ public class Order {
     @Column(name = "description")
     String description;
 
+    @Transient
+    String family;
 
+    public String getFamily() {
+        return family;
+    }
 
-
+    public void setFamily(String family) {
+        this.family = family;
+    }
 
     public Integer getId() {
         return id;
@@ -43,11 +50,11 @@ public class Order {
         this.id = id;
     }
 
-    public String getDon() {
+    public Integer getDon() {
         return don;
     }
 
-    public void setDon(String don) {
+    public void setDon(Integer don) {
         this.don = don;
     }
 
