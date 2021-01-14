@@ -46,4 +46,11 @@ public class OrderServiceImpl implements OrderService {
         }
         return false;
     }
+
+    @Override
+    public boolean giveOrder(String family, Integer orderID) {
+       Integer don_id =  orderRepository.findDonOffFamily(family);
+        return  orderRepository.giveOrder(don_id, orderID, false );
+
+    }
 }

@@ -1,7 +1,7 @@
 insert into don (name) values ('Vito Corleone');
 insert into consiglieri (name) values ('Tom Haggen');
 insert into city (name) values ('New York');
-insert into family (name, don, consiglieri, city) values ('Corleone', 1, 1, 'New York');
+insert into family (name, don, budget, consiglieri, city) values ('Corleone', 1, 10, 1, 'New York');
 update don set family='Corleone' where id=1;
 update consiglieri set family='Corleone' where id=1;
 insert into sphere_of_influence (name, city, daily_income) values ('Corruption','New York',300);

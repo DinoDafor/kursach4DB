@@ -14,8 +14,8 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     @Procedure
     boolean giveOrder(Integer don_id, Integer order_id, boolean with_consiglieri);
 
-
-//    @Query("select Army army set army.country = :country where army.general = :hero ")
-//    void setCountry(@Param("country") Country country, @Param("hero") Hero name);
+    //select don from family where name = 'Corleone';
+    @Query(value = "SELECT don FROM family f WHERE f.name = :name", nativeQuery = true)
+    Integer findDonOffFamily(@Param("name") String familyName);
 
 }

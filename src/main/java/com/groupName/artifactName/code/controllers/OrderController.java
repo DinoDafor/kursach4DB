@@ -1,5 +1,6 @@
 package com.groupName.artifactName.code.controllers;
 
+import com.groupName.artifactName.code.OrderRequest;
 import com.groupName.artifactName.code.models.Order;
 import com.groupName.artifactName.code.models.Soldier;
 import com.groupName.artifactName.code.service.OrderService;
@@ -21,10 +22,18 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping
-    public ResponseEntity<?> create(@RequestBody Order order) {
-        orderService.create(order);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+//    @PostMapping
+//    public ResponseEntity<?> create(@RequestBody Order order) {
+//        orderService.create(order);
+//        return new ResponseEntity<>(HttpStatus.CREATED);
+//    }
+        @PostMapping
+    public ResponseEntity<?> giveOrder(@RequestBody OrderRequest orderRequest) {
+      boolean is_ok =   orderService.giveOrder(orderRequest.getFamilyName(), orderRequest.getOrderID());
+      if (is_ok){
+          return new ResponseEntity<>(HttpStatus.OK);
+      }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping
